@@ -77,14 +77,15 @@
                                          <div id="cat-form-0" class="category-form" style="display:none">
                                               <form class="forms-sample" action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data"> 
                                                   @csrf
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-md-6">
-                                                        <input type="text" name="name" id="category-0" class="form-control category"/>
-                                                    </div> 
-                                                    <div class="col-sm-12 col-md-6">
-                                                        <button type="submit" class="btn btn-sm btn-success category-add">Add </button>
-                                                         <button type="button" class="btn btn-sm btn-success cancle"  data-cat="0">Cancle </button>
-                                                    </div>    
+                                               <div class="form-group c_group">
+                                                    <div class="input-group">
+                                                        <input type="text" name="name" id="category-input-0" class="form-control category"/>
+                                                        <input type="hidden" name="parent_id" id="category-0" class="form-control parent_id" value="0" />
+                                                          <div class="input-group-append">
+                                                            <button type="submit" class="btn btn-sm btn-success category-add">Save </button>
+                                                            <button type="button" class="btn btn-sm btn-danger cancle" data-cat="0">Cancle </button>
+                                                          </div>
+                                                    </div>
                                                 </div> 
                                             </form> 
                                          </div> 
@@ -129,9 +130,7 @@
                     $('#cat-form-'+catId).show();  
                     $('#category-form-'+catId).attr('action',route);
                      $('#edit-block-'+catId).html(' <input type="hidden" name="_method" value="PUT">');
-                    alert(route);
-
-                    
+                   
                 });
 
                 $('.cancle').click(function(){
