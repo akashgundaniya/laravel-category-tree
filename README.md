@@ -20,7 +20,7 @@ Now you are done.
 <br>
 
 ` php artisan serve ` and open the project on the browser. 
-'Please flow this url= http://127.0.0.1:8000/category
+'Please follow this url url= http://127.0.0.1:8000/category
 
 
 
